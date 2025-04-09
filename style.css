@@ -1,0 +1,36 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+
+ }
+
+ body {
+     background-color: #030e16;
+ }
+
+ .top-navbar {
+     background-color: #07263d;
+ }
+
+ .navbar a {
+     color: #fff !important;
+ }
+
+ .navbar-toggler {
+     background-color: #0d3653ab !important;
+ }
+
+ .image-banner img {
+     width: 100%;
+     height: 500px;
+     object-fit: cover;
+     border-radius: 50%;
+ }
+
+ .image-about img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 50%;
+ }
