@@ -1,36 +1,484 @@
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+}
 
- }
+body {
+    background-color: #0D0D0D;
+    font-family: 'Inter', sans-serif;
+}
 
- body {
-     background-color: #030e16;
- }
+p {
+    font-family: 'Poppins', sans-serif;
+}
 
- .top-navbar {
-     background-color: #07263d;
- }
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+}
 
- .navbar a {
-     color: #fff !important;
- }
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
 
- .navbar-toggler {
-     background-color: #0d3653ab !important;
- }
+.custom-poppins {
+    font-family: 'Poppins', sans-serif;
+}
 
- .image-banner img {
-     width: 100%;
-     height: 500px;
-     object-fit: cover;
-     border-radius: 50%;
- }
+.top-navbar {
+    background-color: #07263d;
+}
 
- .image-about img{
+.heading {
+    margin: 10px 0;
+    color: #ffffff;
+    padding: 30px 0;
+    background-color: #131212f8;
+}
+
+.navbar-nav a {
+    color: #fff !important;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1s ease;
+}
+
+.navbar-nav a.animate {
+    animation: slideTop 1.5s ease forwards;
+}
+
+.logo {
+    color: #fff !important;
+    opacity: 0;
+
+}
+
+.logo.animate {
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar-toggler {
+    background-color: #0d3653ab !important;
+}
+
+.image-banner h3 span {
+    color: rgb(110, 3, 12) !important;
+    font-size: 32px;
+}
+
+.image-banner h3:nth-of-type(2) {
+    margin-bottom: 20px;
+}
+
+.image-banner h2,
+.image-banner h1,
+.image-banner h3,
+.image-banner p,
+.social-links {
+    opacity: 0;
+    transform: translateY(100px);
+    /* or X for slideRight */
+    transition: all 0.8s ease;
+}
+
+.social-links a i {
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.image-banner h3 {
+    transform: translateX(-100px);
+}
+
+/* Animation triggers */
+.image-banner h2.animate {
+    animation: slideTop 1s ease forwards;
+}
+
+.image-banner h1.animate {
+    animation: slideTop 1.3s ease forwards;
+}
+
+.image-banner h3.animate {
+    animation: slideRight 2.5s ease forwards;
+}
+
+.image-banner p.animate {
+    animation: slideTop 2s ease forwards;
+}
+
+.social-links.animate {
+    animation: slideTop 2.5s ease forwards;
+}
+
+
+.profile-img {
     width: 100%;
-    height: 500px;
+    max-width: 400px;
+    height: auto;
     object-fit: cover;
     border-radius: 50%;
- }
+    box-shadow: 0 0 30px white;
+    transition: transform 0.3s ease-in-out;
+    animation-delay: 0.3;
+}
+
+.profile-img.animate {
+    animation: zoomIn 1.2s ease forwards;
+
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+.social-links a {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #c0bac0;
+}
+
+.service1,
+.service2,
+.service3,
+.service4 {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.card {
+    color: #ffffff;
+    background-color: #1a1a1a !important;
+    box-shadow: 0 0 10px #ffffff;
+}
+
+.service1.animate {
+    animation: slideTop 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.service2.animate {
+    animation: slideTop 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.service3.animate {
+    animation: slideTop 1s ease forwards;
+    animation-delay: 0.9s;
+}
+
+.service4.animate {
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1.2s;
+}
+
+/* ------------- card Section --------------- */
+.card-hover {
+    width: 350px;
+    height: 380px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #ffffff;
+    background-color: #1a1a1a;
+
+}
+
+
+/* 4 vertical slices */
+.card-hover span {
+    position: absolute;
+    top: 0;
+    width: 25%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 400% 100%;
+    z-index: 1;
+    transition: transform 0.8s ease-in-out;
+}
+
+/* Position and background slice for each */
+.card-hover span:nth-child(1) {
+    left: 0%;
+    background-position-x: 0%;
+    transition-delay: 0.1s;
+}
+
+.card-hover span:nth-child(2) {
+    left: 25%;
+    background-position-x: 33.33%;
+    transition-delay: 0.2s;
+}
+
+.card-hover span:nth-child(3) {
+    left: 50%;
+    background-position-x: 66.66%;
+    transition-delay: 0.3s;
+}
+
+.card-hover span:nth-child(4) {
+    left: 75%;
+    background-position-x: 100%;
+    transition-delay: 0.4s;
+}
+
+/* Image slides up on hover */
+.card-hover:hover span {
+    transform: translateY(-100%);
+}
+
+/* Content styling */
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    z-index: 2;
+    transform: translateY(100%);
+    transition: transform 0.8s ease 0.5s;
+}
+
+/* Slide in content after image */
+.card-hover:hover .card-content {
+    transform: translateY(0%);
+}
+
+
+/* Background images for each card */
+.img1 span {
+    background-image:
+        linear-gradient(#007bff, #0d3653ab),
+        url('./Assets/notedemo.jpg');
+    background-blend-mode: overlay;
+}
+
+.img2 span {
+    background-image: url('./Assets/stopwatch.jpg');
+}
+
+.img3 span {
+    background-image: url('./Assets/blogapp.jpg');
+}
+
+.img4 span {
+    background-image: url('./Assets/hiringmine.jpg');
+}
+
+.img5 span {
+    background-image: url('./Assets/quizappfirebase.jpg');
+}
+
+.img6 span {
+    background-image: url('./Assets/mongonoteapp.jpg');
+}
+
+.img7 span {
+    background-image: url('./Assets/noteapplocal.jpg');
+}
+
+.img1,
+.img2,
+.img3,
+.img4,
+.img5,
+.img6,
+.img7 {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.img1.animate {
+    animation: slideTop 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.img2.animate {
+    animation: slideTop 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.img3.animate {
+    animation: slideTop 1s ease forwards;
+    animation-delay: 0.9s;
+}
+
+.img4.animate {
+    animation: slideTop 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.img5.animate {
+    animation: slideTop 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+.img6.animate {
+    animation: slideTop 1s ease forwards;
+    animation-delay: 0.9s;
+}
+
+.img7.animate {
+    animation: slideTop 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.radial-bar {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+}
+
+.radial-bar svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.radial-bar circle {
+    fill: none;
+    stroke-width: 15;
+    stroke-linecap: round;
+}
+
+.progress-bg {
+    stroke: #e6e6e6;
+}
+
+.progress-circle {
+    stroke: #007bff;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    transition: stroke-dashoffset 1.5s ease;
+}
+
+.radial-bar .percentage {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.radial-bar .prof-text {
+    text-align: center;
+    font-size: 1rem;
+}
+
+
+.project-link {
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 0 10px white;
+    display: block;
+    text-align: center;
+}
+
+.message-btn {
+    color: black;
+    /* display: block; */
+    width: 100% !important;
+    padding: 7px 0;
+    margin-top: 20px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+
+.card:hover,
+.card:hover,
+.card:hover,
+.card:hover {
+    transform: translateY(-10px);
+    transition: 0.5s ease-in;
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 🔄 Responsive Tweaks */
+@media (max-width: 768px) {
+    .image-banner h3 span {
+        font-size: 24px;
+    }
+
+    .profile-img {
+        width: 80%;
+        max-width: 350px;
+    }
+
+    .social-links a {
+        font-size: 20px;
+        margin: 0 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .profile-img {
+        width: 90%;
+        max-width: 220px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+}
