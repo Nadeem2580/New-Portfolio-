@@ -12,6 +12,7 @@ body {
 
 p {
     font-family: 'Poppins', sans-serif;
+    color: #555;
 }
 
 h1 {
@@ -29,7 +30,8 @@ h3 {
 }
 
 .top-navbar {
-    background-color: #07263d;
+    background-color: #131212f8;
+    box-shadow:0 0 10px #fff;
 }
 
 .heading {
@@ -38,13 +40,32 @@ h3 {
     padding: 30px 0;
     background-color: #131212f8;
 }
-
 .navbar-nav a {
     color: #fff !important;
     opacity: 0;
+    position: relative;
     transform: translateY(100px);
-    transition: all 1s ease;
+    transition: all 1s ease, color 0.3s ease;
+    text-decoration: none;
 }
+
+.navbar-nav a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 3px;
+    background-color:#ffffff; /* or your color: #615f5f */
+    transition: width 0.4s ease;
+}
+
+.navbar-nav a:hover::after {
+    width: 60%; /* You can adjust this */
+}
+
+
 
 .navbar-nav a.animate {
     animation: slideTop 1.5s ease forwards;
@@ -259,10 +280,9 @@ h3 {
 
 /* Background images for each card */
 .img1 span {
-    background-image:
-        linear-gradient(#007bff, #0d3653ab),
-        url('./Assets/notedemo.jpg');
+    background: rgba(0, 0, 0, 0.5);
     background-blend-mode: overlay;
+    background-image: url('./Assets/notedemo.jpg');
 }
 
 .img2 span {
@@ -272,6 +292,7 @@ h3 {
 .img3 span {
     background-image: url('./Assets/blogapp.jpg');
 }
+
 
 .img4 span {
     background-image: url('./Assets/hiringmine.jpg');
@@ -363,6 +384,7 @@ h3 {
     stroke-dasharray: 502;
     stroke-dashoffset: 502;
     transition: stroke-dashoffset 1.5s ease;
+    transition-delay: 1s;
 }
 
 .radial-bar .percentage {
@@ -410,6 +432,16 @@ h3 {
     transition: 0.5s ease-in;
 }
 
+.footer-End {
+    margin-top: 100px;
+    background-color: #2b2a2a;
+    text-align: center;
+}
+.footer-End p{
+    color: #ffffff;
+    padding: 10px 0;
+
+}
 @keyframes slideTop {
     0% {
         transform: translateY(100px);

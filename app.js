@@ -1,5 +1,11 @@
 var typed = new Typed(".text", {
-    strings: ["Frontend Developer", "YouTuber", "Web Developer"],
+    strings: [
+        "Aspiring Full-Stack Developer",
+        "Frontend Enthusiast",
+        "JavaScript Explorer",
+        "Creative Web Designer",
+        
+      ],
     typeSpeed: 70,
     backSpeed: 70,
     backDelay: 1000,
@@ -7,15 +13,15 @@ var typed = new Typed(".text", {
 });
 
 
-// Animate progress bars
+
 document.addEventListener("DOMContentLoaded", () => {
-    // Linear progress
+
     document.querySelectorAll(".progress-bar").forEach(bar => {
         const value = bar.getAttribute("data-value");
         bar.style.width = value + "%";
     });
 
-    // Radial progress
+
     document.querySelectorAll(".radial-bar").forEach(bar => {
         const percent = bar.getAttribute("data-percent");
         const circle = bar.querySelector(".progress-circle");
