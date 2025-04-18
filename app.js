@@ -1,11 +1,13 @@
+
+
 var typed = new Typed(".text", {
     strings: [
         "Aspiring Full-Stack Developer",
         "Frontend Enthusiast",
         "JavaScript Explorer",
         "Creative Web Designer",
-        
-      ],
+
+    ],
     typeSpeed: 70,
     backSpeed: 70,
     backDelay: 1000,
@@ -32,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         circle.style.strokeDashoffset = `${circumference}`;
         setTimeout(() => {
             circle.style.strokeDashoffset = offset;
-        }, 200);
+        }, 800);
     });
 });
 
@@ -62,5 +64,34 @@ document.addEventListener("DOMContentLoaded", function () {
     profileImg.forEach(profile => observer.observe(profile));
     allServices.forEach(service => observer.observe(service));
     cardHover.forEach(card => observer.observe(card));
-    cardHover
+
 });
+
+
+const messageFunc = () => {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    fetch("http://localhost:5000/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data, "data");
+
+            const modal = new bootstrap.Modal(document.getElementById('successModal'));
+            modal.show();
+
+
+            // Clear input fields
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+        })
+        .catch((error) => {
+            console.log("Error", error.message);
+        });
+};
