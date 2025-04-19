@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import mongoose from "mongoose";
 import nodemailer from "nodemailer"
 
 const app = express();
@@ -50,4 +49,3 @@ app.post("/contact", async (req, res) => {
 
 app.listen(PORT, () => console.log(`Server running on http//:localhost:${PORT}`))
 
-console.log("Hello wold")

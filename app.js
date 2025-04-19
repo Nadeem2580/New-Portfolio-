@@ -37,13 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 800);
     });
 });
-
 document.addEventListener("DOMContentLoaded", function () {
     const bannerElements = document.querySelectorAll('.image-banner h1, .image-banner h2, .image-banner h3, .image-banner p, .social-links');
-    const allServices = document.querySelectorAll(".service1 , .service2 ,.service3 , .service4")
+    const allServices = document.querySelectorAll(".service1 , .service2 ,.service3 , .service4");
     const navLinks = document.querySelectorAll('.navbar-nav a');
-    const cardHover = document.querySelectorAll('.card-hover');
-    const profileImg = document.querySelectorAll(".profile-img")
+    const animatedCards = document.querySelectorAll('.img1, .img2, .img3, .img4, .img5, .img6, .img7');
+    const profileImg = document.querySelectorAll(".profile-img");
     const logo = document.querySelector('.logo');
 
     const observer = new IntersectionObserver(entries => {
@@ -63,9 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
     bannerElements.forEach(el => observer.observe(el));
     profileImg.forEach(profile => observer.observe(profile));
     allServices.forEach(service => observer.observe(service));
-    cardHover.forEach(card => observer.observe(card));
-
+    animatedCards.forEach(card => observer.observe(card));
 });
+
 
 
 const messageFunc = () => {

@@ -6,11 +6,13 @@
 }
 
 body {
-    background-color: #0D0D0D;
     font-family: 'Inter', sans-serif;
+    background: linear-gradient(to right, #0D0D0D, #0D0D0D, #401a78);
+    min-height: 100vh;
 }
 
-  
+/* ----- global Styling -------------- */
+
 p {
     font-family: 'Poppins', sans-serif;
     color: #555;
@@ -30,17 +32,22 @@ h3 {
     font-family: 'Poppins', sans-serif;
 }
 
-.top-navbar {
-    background-color: #131212f8;
-    box-shadow:0 0 10px #fff;
-}
-
 .heading {
     margin: 10px 0;
     color: #ffffff;
     padding: 30px 0;
-    background-color: #141111f8;
+    background: linear-gradient(to right, rgba(37, 34, 34, 0.1), rgba(37, 33, 33, 0.1), rgba(64, 26, 120, 0.1), rgba(64, 26, 120, 0.1));
+
 }
+
+/* ----- global Styling -------------- */
+/* ----- Navbar Styling -------------- */
+
+.top-navbar {
+    background-color: #131212f8;
+    box-shadow: 0 0 10px #fff;
+}
+
 .navbar-nav a {
     color: #fff !important;
     opacity: 0;
@@ -58,12 +65,12 @@ h3 {
     transform: translateX(-50%);
     width: 0%;
     height: 3px;
-    background-color:#ffffff;
+    background-color: #ffffff;
     transition: width 0.4s ease;
 }
 
 .navbar-nav a:hover::after {
-    width: 60%; 
+    width: 60%;
 }
 
 
@@ -86,6 +93,8 @@ h3 {
     background-color: #0d3653ab !important;
 }
 
+/* ----- Banner Styling -------------- */
+
 .image-banner h3 span {
     color: rgb(110, 3, 12) !important;
     font-size: 32px;
@@ -102,7 +111,6 @@ h3 {
 .social-links {
     opacity: 0;
     transform: translateY(100px);
-    /* transition: all 0.8s ease; */
 }
 
 .social-links a i {
@@ -166,6 +174,8 @@ h3 {
 .social-links a:hover {
     color: #c0bac0;
 }
+
+/* ----- Services Styling -------------- */
 
 .service1,
 .service2,
@@ -344,8 +354,8 @@ h3 {
 }
 
 .img7.animate {
-    animation: slideTop 1s ease forwards;
-    animation-delay: 0.3s;
+    animation: slideTop 3s ease forwards;
+    animation-delay: 0.15s;
 }
 
 .radial-bar {
@@ -378,6 +388,7 @@ h3 {
     transition: stroke-dashoffset 1.2s ease;
     /* transition-delay: 1s; */
 }
+
 .progress-bar {
     transition: width 1.5s ease-in-out;
 }
@@ -416,11 +427,13 @@ h3 {
     border-radius: 10px;
     outline: none;
     border: none;
+    transition: background-color 0.3s ease;
 }
 
-/* .card:hover, */
-/* .card:hover, */
-/* .card:hover, */
+.message-btn:hover {
+    background-color: #928b92;
+}
+
 .card:hover {
     transform: translateY(-10px);
     transition: 0.5s ease-in;
@@ -431,11 +444,17 @@ h3 {
     background-color: #2b2a2a;
     text-align: center;
 }
-.footer-End p{
-    color: #ffffff;
-    padding: 10px 0;
+
+
+footer {
+    background: linear-gradient( #0D0D0D, #0D0D0D, #401a78 );
+}
+
+footer p {
+    color: #fff !important;
 
 }
+
 @keyframes slideTop {
     0% {
         transform: translateY(100px);
